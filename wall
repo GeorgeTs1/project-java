@@ -1,0 +1,21 @@
+//Am 1070770
+//Dimitra Mavridou
+
+import java.util.ArrayList;
+public class Wall {
+    ArrayList<Message> postlist= new ArrayList<Message>();
+    
+    public int share(User user1,User user2)//elegxos gia to an einai filoi
+    {
+       if(user1==user2)
+        {return 0;}
+          if(user1.friends.contains(user2))
+           {
+               return 1;
+           }
+           else
+           {/*epsaxe kai den einai filoi*/return -1;}
+       
+       //return 3;
+    }
+}
