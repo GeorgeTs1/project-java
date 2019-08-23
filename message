@@ -1,0 +1,20 @@
+//Am 1070770
+//Dimitra Mavridou
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+public class Message {
+    Timestamp timestampms=new Timestamp(System.currentTimeMillis());
+    protected String text;
+    ArrayList<ReplyMessage> replies=new ArrayList<ReplyMessage>();
+    protected int likes=0;
+    Message(String text)
+    {
+        this.text=text;
+    }
+    public String toString()
+    {
+        return " Message "+text+" Likes "+likes+replies.toString();
+    }
+            
+}
