@@ -1,0 +1,16 @@
+//Am 1070770
+//Dimitra Mavridou
+import java.sql.Timestamp;
+public class FriendRequest {
+    protected User from;
+    protected User to;
+    protected String state;
+    Timestamp timestampfr=new Timestamp(System.currentTimeMillis());
+    public FriendRequest(User from,User to,String state)
+    {   //super(username,email);
+        this.from=from;
+        this.to=to;
+        this.state=state;
+        
+    }
+}
