@@ -1,0 +1,82 @@
+//Am 1070770
+//Dimitra Mavridou
+import java.util.*; 
+import java.util.ArrayList;
+import java.util.Scanner;
+public class User{
+    protected String username;
+    protected String email;
+    ArrayList<FriendRequest> frequests=new ArrayList<FriendRequest>();
+    ArrayList<User> friends=new ArrayList<User>();
+    protected Wall wall=new Wall();
+    public User(String username,String email)
+    {
+        this.username=username;
+        this.email=email;
+    }
+    public void sendfr(User user1,User user2)
+    {
+        FriendRequest fr=new FriendRequest(user1,user2,"pending");
+        frequests.add(fr);
+    }
+   public void acceptdeny(User user1,User user2)
+   {
+       System.out.println("Accept/Deny(enter 1 for accept 2 for deny)");
+       Scanner sc = new Scanner(System.in);
+       int i = sc.nextInt();
+        if(i==1)
+            {
+               Network net=new Network();
+               net.makefriends(user1, user2);
+            }
+        else if(i==2 && user1!=user2)
+            {
+                user1.frequests.remove(user2);
+            }
+       
+   }
+   public void deletefriend(User user1,User user2)
+   {
+       user1.friends.remove(user2);
+   }
+   public void message(User user1,User user2)
+   {   System.out.println("Enter the message you want to share");
+       Scanner sc = new Scanner(System.in);
+       String st = sc.next();
+       Message ms=new Message(st);
+       System.out.println("Where do you want to share it?\n(my Wall /press 1 , my Friends Wall/press 2 , Reply/press 3)");
+       int i= sc.nextInt();
+       if(i==1)
+       {
+           user1.wall.postlist.add(ms);
+       }
+       else if(i==2)
+       {
+           user1.wall.share(user1, user2);
+           user2.wall.postlist.add(ms);
+       }
+       else if(i==3)
+       {
+           System.out.println("Do you want to reply to a mesage on your wall?(yes/no)");
+           Scanner j = new Scanner(System.in);
+           String ans = j.nextLine();
+           if(ans=="yes")
+           {
+               System.out.println("Reply to (enter number 0--):"+user1.wall.postlist);
+               int in=j.nextInt();
+               ReplyMessage rep=new ReplyMessage(st);
+               user1.wall.postlist.add(rep);
+           }
+       }
+   }
+  public String toString()
+  {
+      return "Username:"+username+"Email:"+email+"All friend requests:"+frequests+"All friends:"+friends+"Everything on your wall:"+wall.postlist;
+  }
+  public void printfr(User user)
+  {
+      Network net=new Network();
+      net.printfriends(user);
+  }
+    
+}
