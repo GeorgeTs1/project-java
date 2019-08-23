@@ -1,0 +1,61 @@
+//Am 1070770
+//Dimitra Mavridou
+import java.util.*;
+public class Network {
+    Map<ArrayList,User> network=new HashMap<ArrayList,User>();
+    //ArrayList<FriendRequest> list=new ArrayList<FriendRequest>();
+    public void adduser(User user)
+    {
+        network.put(user.frequests, user);
+    }
+    public void remove(User user)
+    {
+        network.remove(user);
+    }
+    public void makefriends(User user1,User user2)
+    {int x;
+        if(user1!=user2)
+        {
+           
+               if( user1.friends.contains(user2))
+               {System.out.println("User 1 and use 2 are  friends"); x=1;}
+               else{System.out.println("Users are not friends");x=0;}
+        }
+        else{System.out.println("User 1 and User 2 are the same user");x=2;}
+        if(x==0)
+        {user1.friends.add(user2);}
+        
+    }
+    public void printfriends(User user)
+    {
+        System.out.println(user.friends);
+    }
+    public boolean arefriends(User user1,User user2)
+    {
+        if(user1!=user2)
+        
+        {          if( user1.friends.contains(user2))
+               {System.out.println("User 1 and use 2 are  friends");
+               return true;}
+               else{System.out.println("Users are not friends");
+               return false;}
+        }
+        return false;
+        
+    }
+    public ArrayList mfriends(User user1,User user2)
+    {ArrayList<User> mutuals=new ArrayList<User>();
+        for(int i=0; i<user1.friends.size(); i++)
+        {
+            for(int j=0; j<user2.friends.size(); j++)
+            {
+                if(user1.friends.get(i)==user2.friends.get(j))
+                {
+                    mutuals.add(user1.friends.get(i));
+                }
+            }
+        }
+        return mutuals;
+    }
+    
+}
