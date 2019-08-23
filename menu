@@ -1,0 +1,7 @@
+import java.util.*; 
+public class Menu {
+    System.out.println("Welcome! Please enter your username:");
+    Scanner sc = new Scanner(System.in);
+    String i = sc.nextLine();
+    
+}
