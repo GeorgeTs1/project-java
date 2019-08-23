@@ -1,0 +1,15 @@
+//Am 1070770
+//Dimitra Mavridou
+import java.sql.Timestamp;
+public class ReplyMessage extends Message{
+    Timestamp timestampreplyms=new Timestamp(System.currentTimeMillis());
+    protected String textreply;
+    public ReplyMessage(String textreply)
+    {
+        super(textreply);
+    }
+    public String toString()
+    {
+        return " Replies "+textreply;
+    }
+}
