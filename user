@@ -1,8 +1,6 @@
-//Am 1070770
-//Dimitra Mavridou
 import java.util.*; 
-import java.util.ArrayList;
-import java.util.Scanner;
+//import java.util.ArrayList;
+//import java.util.Scanner;
 public class User{
     protected String username;
     protected String email;
