@@ -1,7 +1,24 @@
-import java.util.*; 
-public class Menu {
+import java.util.*;
+public class Menu extends Network {
+    
+	public User start(){ 
+	User usernull=null;
     System.out.println("Welcome! Please enter your username:");
     Scanner sc = new Scanner(System.in);
     String i = sc.nextLine();
+    //Set<User> mySet = network.get("i");
+    for(int j=0; j<network.size();j++) {
+    if (network.containsValue(i))
+    {
+    	return network.get(j);
+    }
     
+	}
+    return usernull;
+	}
+    public void seeyourwall() {
+    	User myuser=start();
+    	myuser.wall.postlist.toString();
+    }
+
 }
