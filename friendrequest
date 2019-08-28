@@ -1,5 +1,3 @@
-//Am 1070770
-//Dimitra Mavridou
 import java.sql.Timestamp;
 public class FriendRequest {
     protected User from;
@@ -12,5 +10,9 @@ public class FriendRequest {
         this.to=to;
         this.state=state;
         
+    }
+    public String toString()
+    {
+    	return "Friend Request from:"+ from+"to :"+to+ "State"+ state;
     }
 }
