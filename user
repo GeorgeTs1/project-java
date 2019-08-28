@@ -67,9 +67,10 @@ public class User{
            }
        }
    }
-  public String toString()
+  public int printWall()
   {
-      return "Username:"+username+"Email:"+email+"All friend requests:"+frequests+"All friends:"+friends+"Everything on your wall:"+wall.postlist;
+      System.out.println( "Username:"+username+"Email:"+email+"All friend requests:"+frequests+"All friends:"+friends+"Everything on your wall:"+wall.getList());
+    return 0;
   }
   public void printfr(User user)
   {
