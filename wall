@@ -1,6 +1,3 @@
-//Am 1070770
-//Dimitra Mavridou
-
 import java.util.ArrayList;
 public class Wall {
     ArrayList<Message> postlist= new ArrayList<Message>();
@@ -18,4 +15,6 @@ public class Wall {
        
        //return 3;
     }
+   public String toString()
+   {return "List of posts"+ postlist;}
 }
