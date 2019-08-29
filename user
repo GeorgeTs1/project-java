@@ -76,5 +76,8 @@ public class User{
       Network net=new Network();
       net.printfriends(user);
   }
-    
+    public ArrayList<User> getList()
+    {
+    return friends;
+    }
 }
