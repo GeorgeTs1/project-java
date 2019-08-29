@@ -20,5 +20,30 @@ public class Menu extends Network {
     	User myuser=start();
     	myuser.wall.postlist.toString();
     }
+public void seeFriendsWall(User user1)
+{
+
+System.out.println("Διάλεξε να δεις το Wall ενος φίλου σου");
+user1.getList();
+
+for(int i=0; i<user1.friends.size(); i++)
+{
+System.out.println(user1.friends.get(i));
+}
+System.out.println("Για το 1ο φίλο σου πληκτρολόγησε τον αριθμό 0 για τον 2ο το 1 κ.ο.κ");
+Scanner sc = new Scanner(System.in);
+int j = sc.nextInt();
+
+switch(j)
+{
+case(0):{}
+break;
+case(1):{user1.friends.get(0).printWall();}
+break;
+case(2):{user1.friends.get(1).printWall();}
+break;
+}
 
 }
+
+
